@@ -35,6 +35,10 @@ def delete_note(request, pk=None):
     Notes.objects.get(id=pk).delete()
     return redirect('notes')
 
+
+def homework(request):
+   
+    return render(request, 'myApp/homework.html')
    
 
    
