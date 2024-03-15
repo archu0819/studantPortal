@@ -28,6 +28,13 @@ def notes(request):
     context = {'form': form, 'notes': notes}
     return render(request, 'myApp/notes.html', context)
 
+class NotesDetailView(generic.DetailView):
+    model = Notes
+
 def delete_note(request, pk=None):
     Notes.objects.get(id=pk).delete()
     return redirect('notes')
+
+   
+
+   
