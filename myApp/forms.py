@@ -10,6 +10,9 @@ class NotesForm(forms.ModelForm):
 
 class DateInput(forms.DateInput):
     input_type = 'date'
+
+class DashboardForm(forms.Form):
+    text = forms.CharField(max_length=100, label="Enter your search: ")
 class HomeworkForm(forms.ModelForm):
     class Meta:
         model = Homework

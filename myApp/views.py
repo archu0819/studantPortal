@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic
 
 from myApp.models import Notes
+from youtubesearchpython import VideosSearch
 
 # Create your views here.
 def home(request):
@@ -64,6 +65,37 @@ def homework(request):
     context = {'form': form, 'homeworks': homeworks,
                'homeworks_done': homeworks_done}
     return render(request, 'myApp/homework.html', context)
+
+
+def youtube(request):
+    if request.method == "POST":
+        form = DashboardForm(request.POST)
+        text = request.POST['text']
+        videos = VideosSearch(text, limit=5)
+        result_list = []
+        print(videos.result())
+        for i in videos.result()['result']:
+            result_dict = {
+                'input': text,
+                'title': i['title'],
+                'duration': i['duration'],
+                'thumbnail': i['thumbnails'][0]['url'],
+                'channel': i['channel']['name'],
+                'link': i['link'],
+                'views': i['viewCount']['short'],
+                'published': i['publishedTime'],
+            }
+            desc = ''
+
+            for j in i['descriptionSnippet']:
+                desc += j['text']
+            result_dict['description'] = desc
+            result_list.append(result_dict)
+        return render(request, 'myApp/youtube.html', {'form': form, 'results': result_list})
+    else:
+        form = DashboardForm()
+    return render(request, 'myApp/youtube.html', {'form': form})
+
 
 def delete_homework(request, pk=None):
     Homework.objects.get(id=pk).delete()
