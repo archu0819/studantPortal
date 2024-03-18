@@ -8,6 +8,7 @@ from django.views import generic
 
 from myApp.models import Notes
 from youtubesearchpython import VideosSearch
+import wikipedia
 
 # Create your views here.
 def home(request):
@@ -192,5 +193,56 @@ def books(request):
     else:
         form = DashboardForm()
     return render(request, 'myApp/books.html', {'form': form})
+
+
+def wiki(request):
+    if request.method == "POST":
+        text = request.POST['text']
+        form = DashboardForm(request.POST)
+        search = wikipedia.page(text)
+        context = {
+            'form': form,
+            'title': search.title,
+            'link': search.url,
+            'details': search.summary,
+        }
+        return render(request, 'myApp/wiki.html', context)
+    else:
+        form = DashboardForm()
+    return render(request, 'myApp/wiki.html', {'form': form})
+
+
+def dictionary(request):
+    if request.method == "POST":
+        text = request.POST['text']
+        form = DashboardForm(request.POST)
+
+        url = "https://api.dictionaryapi.dev/api/v2/entries/en_US/"+text
+        r = requests.get(url)
+        answer = r.json()
+        try:
+            phonetics = answer[0]['phonetics'][0]['text']
+            audio = answer[0]['phonetics'][0]['audio']
+            definition = answer[0]['meanings'][0]['definitions'][0]['definition']
+            example = answer[0]['meanings'][0]['definitions'][0]['example']
+            synonyms = answer[0]['meanings'][0]['definitions'][0]['synonyms']
+            context = {
+                'form': form,
+                'input': text,
+                'phonetics': phonetics,
+                'audio': audio,
+                'definition': definition,
+                'example': example,
+                'synonyms': synonyms,
+            }
+        except:
+            context = {
+                'form': form,
+                'input': '',
+            }
+        return render(request, 'myApp/dictionary.html', context)
+    else:
+        form = DashboardForm()
+    return render(request, 'myApp/dictionary.html', {'form': form})
 
    
