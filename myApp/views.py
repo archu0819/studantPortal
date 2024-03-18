@@ -38,7 +38,10 @@ def delete_note(request, pk=None):
 
 def homework(request):
    
-    return render(request, 'myApp/homework.html')
+           
+    homeworks = Homework.objects.filter(user=request.user)
+    context = {'homeworks': homeworks}
+    return render(request, 'myApp/homework.html',context)
    
 
    
