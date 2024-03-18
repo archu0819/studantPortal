@@ -37,11 +37,51 @@ def delete_note(request, pk=None):
 
 
 def homework(request):
-   
-           
+    if request.method == "POST":
+        form = HomeworkForm(request.POST)
+        if form.is_valid():
+            try:
+                finished = request.POST['is_finished']
+                if finished == 'on':
+                    finished = True
+                else:
+                    finished = False
+            except:
+                finished = False
+            homeworks = Homework(
+                user=request.user, subject=request.POST['subject'], title=request.POST['title'], description=request.POST['description'], due=request.POST['due'], is_finished=finished)
+            homeworks.save()
+            messages.success(
+                request, f'Homework Added from {request.user.username}!')
+    else:
+        form = HomeworkForm()
     homeworks = Homework.objects.filter(user=request.user)
-    context = {'homeworks': homeworks}
-    return render(request, 'myApp/homework.html',context)
+    if len(homeworks) == 0:
+        homeworks_done = True
+    else:
+        homeworks_done = False
+    homeworks = zip(homeworks, range(1, len(homeworks)+1))
+    context = {'form': form, 'homeworks': homeworks,
+               'homeworks_done': homeworks_done}
+    return render(request, 'myApp/homework.html', context)
+
+def delete_homework(request, pk=None):
+    Homework.objects.get(id=pk).delete()
+    if 'profile' in request.META['HTTP_REFERER']:
+        return redirect('profile')
+    return redirect('homework')
+
+
+def update_homework(request, pk=None):
+    homework = Homework.objects.get(id=pk)
+    if homework.is_finished == True:
+        homework.is_finished = False
+    else:
+        homework.is_finished = True
+    homework.save()
+    if 'profile' in request.META['HTTP_REFERER']:
+        return redirect('profile')
+    return redirect('homework')
    
 
    
