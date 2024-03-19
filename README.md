@@ -63,3 +63,46 @@
   <li>Password : 1234</li>
  In your web browser enter the address : http://127.0.0.1:8000/admin to view the database structure 
 </ul>
+
+## UX Design
+The Student Study Portal website is designed to be simple and easy to navigate. The site has a responsive design to provide an optimal viewing experience across a wide range of devices.
+
+### Site Structure
+The website has 8 main pages with a clear and semantic structure, the information is well organized, every element is easy to find. The consistency and similarity of the structure is manifested on all pages and sections of the site and covers interactivity.
+
+### Wireframes
+The wireframes were created using [Balsamiq](https://balsamiq.com/). Here are some initial wireframes created at the beginning of the project. The final design may differ from the initial wireframes.
+
+*Home Page*
+
+![Home Page](docs/images/wireframes/student1.png)
+![ Home page Mobile](docs/images/wireframes/student1.png)
+
+*Notes Page*
+
+![Notes Page](docs/images/wireframes/notes.png)
+
+*Homework Page*
+
+![Homework Page](docs/images/wireframes/homework.png)
+
+*Youtube Page*
+
+![Youtube Page](docs/images/wireframes/youtube.png)
+
+*Todo Page*
+
+![Todo Page](docs/images/wireframes/todo.png)
+
+*Books Page*
+
+![Books Page](docs/images/wireframes/books.png)
+
+*Wikipedia Page*
+
+![Wikipedia Page](docs/images/wireframes/wikipedia.png)
+
+*Conversion Page*
+
+![Conversion Page](docs/images/wireframes/conversion.png)
+
