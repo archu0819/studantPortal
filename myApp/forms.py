@@ -54,3 +54,10 @@ class ConversionMassForm(forms.Form):
         label='', widget=forms.Select(choices=CHOICES))
     measure2 = forms.CharField(
         label='', widget=forms.Select(choices=CHOICES))
+
+
+class UserRegisterForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username',
+                  'password1', 'password2']

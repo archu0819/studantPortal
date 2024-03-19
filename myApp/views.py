@@ -14,6 +14,19 @@ import wikipedia
 def home(request):
     return render(request, 'myApp/home.html')
 
+
+def register(request):
+    if request.method == "POST":
+        u_form = UserRegisterForm(request.POST)
+        if u_form.is_valid():
+            u_form.save()
+            username = u_form.cleaned_data.get('username')
+            messages.success(request, f'Account Created for {username}!')
+            return redirect('login')
+    else:
+        u_form = UserRegisterForm()
+    return render(request, 'myApp/register.html', {'u_form': u_form})
+
 def notes(request):
     if request.method == "POST":
         form = NotesForm(request.POST)

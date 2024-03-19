@@ -1,39 +1,62 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# StudentStudyPortal
+# Django-WebApp      
 
-Welcome,
+<h2>Challenge Statement:</h2>
+    <h3>Build a functional prototype of a platform that gives students an array of digital academic and social tools to stay engaged with their studies, peers and broader university community during pandemic.</h3>
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+<h2>Solution Approach:</h2>
+    <h3> StudentStudyPortal is a portal with following features in its dashboard to make student's life easy and more manageable.</h3> 
+    <ol>
+        <li>Notes : Users can create text notes and refer them later, they are stored permanently until deleted.</li>
+        <li>Homework: Users can add homeworks and assign them deadlines, they will be displayed prioritised by deadlines.</li>
+        <li>Youtube Search: Users can perform Youtube search and select desired video to play it on youtube.</li>
+        <li>To Do: Users can add to-do lists for their day and remove them as the work is finished.</li>
+        <li>Books: Users can browse books from a list of neatly organised book menu.</li>
+        <li>Dictionary: Users can enter a word, and the meaning will be displayed along with its phonetic description instantaneously.</li>
+        <li>Wikipedia: Users can search wikipedia to get fast results.</li>
+        <li>Expense Tracker: A virtual wallet is implemented to help the users to manage their expenses and keep track of it.</li>
+        <li>Profile : This will display all the pending todos and homeworks to the users.</li>
+    </ol>
+    
+<h2>Technologies Used:</h2>
+<ul>
+    <li>Python</li>
+    <li>Django</li>
+    <li>Bootstrap</li>
+    <li>JavaScript</li>
+</ul>
+    
+<h2>Additional Python Modules Required:</h2>
+<ul>
+    <li>Django</li>
+    <li>django-crispy-forms</li>
+    <li>youtubesearchpython</li>
+    <li>wikipedia</li>
+</ul>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+<h2>APIs Required:</h2>
+<ul>
+    <li>Dictionary API </li>
+    <li>Google e-books API</li>
+</ul>
+  
+<h2>Note :</h2>
 
-## Codeanywhere Reminders
+<b>The Secret_Key required for the execution and debugging of project is not removed from the project code.</b>
+  
+<h2>Usage :</h2>
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+    python django_web_app/manage.py makemigrations
 
-`python3 -m http.server`
+    python django_web_app/manage.py migrate
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+    python django_web_app/manage.py runserver
+    
+   In your web browser enter the address : http://localhost:8000 or http://127.0.0.1:8000/
+   
+<h2>Admin Login Credentials for database :</h2>
+<ul>
+  <li>Username : root</li>
+  <li>Password : 1234</li>
+ In your web browser enter the address : http://127.0.0.1:8000/admin to view the database structure 
+</ul>

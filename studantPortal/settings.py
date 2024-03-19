@@ -12,9 +12,15 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+import allauth.account
+
+
+if os.path.isfile('env.py'):
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR= BASE_DIR / 'templates'
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,15 +30,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&*j*&e7r2b36mqrt9wiyn!tjl7p+6)zw_=@wisjuqj)2jvq_8o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if "DEBUG" in os.environ else False
 
 ALLOWED_HOSTS = [
     '.herokuapp.com',
     '127.0.0.1',
     'localhost',
      '8000-archu0819-studantportal-x44sqiy7erk.ws-us110.gitpod.io',
+     '.gitpod.io'
 ]
 
+CSRF_TRUSTED_ORIGINS=['https://*.herokuapp.com','https://*.gitpod.io']
 
 # Application definition
 
@@ -47,8 +55,14 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'crispy_bootstrap4',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount'
     
 ]
+SITE_ID = 1
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -58,6 +72,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 ROOT_URLCONF = 'studantPortal.urls'
@@ -109,6 +124,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+Account_EMAIl_VERIFICATION='none'
 
 
 # Internationalization
