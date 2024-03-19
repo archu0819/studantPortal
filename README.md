@@ -2,6 +2,9 @@
 # Django-WebApp      
 
 <h2>Challenge Statement:</h2>
+    
+    <p>The Student Management System (SMS) is a piece of software produced by the school to keep track of and manage all the data it generates, including information about a student’s grades, attendance, interpersonal activity logs, etc.</p>
+    
     <h3>Build a functional prototype of a platform that gives students an array of digital academic and social tools to stay engaged with their studies, peers and broader university community during pandemic.</h3>
 
 <h2>Solution Approach:</h2>
