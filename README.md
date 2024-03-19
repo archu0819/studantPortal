@@ -76,7 +76,7 @@ The wireframes were created using [Balsamiq](https://balsamiq.com/). Here are so
 *Home Page*
 
 ![Home Page](docs/images/wireframes/student1.png)
-![ Home page Mobile](docs/images/wireframes/student2.png)
+
 
 *Notes Page*
 
