@@ -9,6 +9,7 @@ from django.views import generic
 from myApp.models import Notes
 from youtubesearchpython import VideosSearch
 import wikipedia
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -27,6 +28,7 @@ def register(request):
         u_form = UserRegisterForm()
     return render(request, 'myApp/register.html', {'u_form': u_form})
 
+@login_required
 def profile(request):
     homeworks = Homework.objects.filter(is_finished=False, user=request.user)
     todos = Todo.objects.filter(is_finished=False, user=request.user)
@@ -47,6 +49,7 @@ def profile(request):
     
     return render(request, 'myApp/profile.html', context)
 
+@login_required
 def notes(request):
     if request.method == "POST":
         form = NotesForm(request.POST)
@@ -71,6 +74,7 @@ def delete_note(request, pk=None):
     return redirect('notes')
 
 
+@login_required
 def homework(request):
     if request.method == "POST":
         form = HomeworkForm(request.POST)
@@ -130,6 +134,7 @@ def youtube(request):
         form = DashboardForm()
     return render(request, 'myApp/youtube.html', {'form': form})
 
+@login_required
 def todo(request):
     if request.method == "POST":
         form = TodoForm(request.POST)
@@ -160,6 +165,7 @@ def todo(request):
     return render(request, 'myApp/todo.html', context)
 
 
+@login_required
 def delete_homework(request, pk=None):
     Homework.objects.get(id=pk).delete()
     if 'profile' in request.META['HTTP_REFERER']:
@@ -167,6 +173,7 @@ def delete_homework(request, pk=None):
     return redirect('homework')
 
 
+@login_required
 def update_homework(request, pk=None):
     homework = Homework.objects.get(id=pk)
     if homework.is_finished == True:
@@ -179,6 +186,7 @@ def update_homework(request, pk=None):
     return redirect('homework')
    
 
+@login_required
 def delete_todo(request, pk=None):
     Todo.objects.get(id=pk).delete()
     if 'profile' in request.META['HTTP_REFERER']:
@@ -186,6 +194,7 @@ def delete_todo(request, pk=None):
     return redirect('todo')
 
 
+@login_required
 def update_todo(request, pk=None):
     todo = Todo.objects.get(id=pk)
     if todo.is_finished == True:
