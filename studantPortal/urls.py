@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myApp.urls')),
     path('register/', dash_view.register, name='register'),
+    path('profile/', dash_view.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='myApp/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='myApp/logout.html'), name='logout'),
     

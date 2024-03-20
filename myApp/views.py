@@ -27,6 +27,26 @@ def register(request):
         u_form = UserRegisterForm()
     return render(request, 'myApp/register.html', {'u_form': u_form})
 
+def profile(request):
+    homeworks = Homework.objects.filter(is_finished=False, user=request.user)
+    todos = Todo.objects.filter(is_finished=False, user=request.user)
+    if len(homeworks) == 0:
+        homeworks_done = True
+    else:
+        homeworks_done = False
+    if len(todos) == 0:
+        todos_done = True
+    else:
+        todos_done = False
+    context = {
+        'homeworks': zip(homeworks, range(1, len(homeworks)+1)),
+        'todos': zip(todos, range(1, len(todos)+1)),
+        'homeworks_done': homeworks_done,
+        'todos_done': todos_done,
+        }
+    
+    return render(request, 'myApp/profile.html', context)
+
 def notes(request):
     if request.method == "POST":
         form = NotesForm(request.POST)
