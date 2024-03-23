@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 import allauth.account
+import dj_database_url
 
 
 
@@ -169,3 +170,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
