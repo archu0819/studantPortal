@@ -15,3 +15,5 @@ sqlparse==0.4.4
 tzdata==2024.1
 virtualenv==20.25.1
 virtualenvwrapper-win==1.2.7
+django-bootstrap4==3.0.1
+django-crispy-forms==2.0

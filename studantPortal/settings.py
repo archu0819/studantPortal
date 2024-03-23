@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-&*j*&e7r2b36mqrt9wiyn!tjl7p+6)zw_=@wisjuqj)2jvq_8o
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '.herokuapp.com',
+    '.herokuapp.com'
     '127.0.0.1',
     'localhost',
      '8000-archu0819-studantportal-x44sqiy7erk.ws-us110.gitpod.io',
