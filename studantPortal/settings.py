@@ -15,6 +15,7 @@ from pathlib import Path
 import allauth.account
 
 
+
 if os.path.isfile('env.py'):
     import env
 
@@ -59,7 +60,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     
-
     
 ]
 SITE_ID = 1
@@ -69,13 +69,15 @@ LOGOUT_REDIRECT_URL='/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware'
+    'allauth.account.middleware.AccountMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'studantPortal.urls'
@@ -154,10 +156,16 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 #STATICFILES_DIRS = [
  #   os.path.join(BASE_DIR, 'static')
 #]
 
-STATIC_ROOT=os.path.join(BASE_DIR, 'static')
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+STATIC_URL = '/static/'
+STATICFILES_DIR= [os.path.join(BASE_DIR/ 'static'), ] 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT=os.path.join(BASE_DIR, 'static')
+#CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
