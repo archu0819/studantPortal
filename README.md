@@ -112,6 +112,9 @@ The wireframes were created using [Balsamiq](https://balsamiq.com/). Here are so
 
 ![2](docs/images/wireframes/12.png)
 
+![2](docs/images/wireframes/13.png)
+
+
 ![3](docs/images/wireframes/14.png)
 
 ![4](docs/images/wireframes/15.png)
@@ -121,5 +124,5 @@ The wireframes were created using [Balsamiq](https://balsamiq.com/). Here are so
 
 ![6](docs/images/wireframes/17.png)
 
-![7]docs/images/wireframes/18.png)
+![7](docs/images/wireframes/18.png)
 
