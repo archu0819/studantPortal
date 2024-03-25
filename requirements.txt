@@ -19,4 +19,6 @@ whitenoise==6.5.0
 wikipedia==1.4.0
 youtube-search-python==1.6.6
 crispy-bootstrap4==2022.1
-python==3.9.18
+python==3.9.8
+psycopg2==2.9.1
+
