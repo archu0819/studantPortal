@@ -106,3 +106,13 @@ The wireframes were created using [Balsamiq](https://balsamiq.com/). Here are so
 
 ![Conversion Page](docs/images/wireframes/conversion.png)
 
+<h2>Features</h2>
+
+(docs/images/wireframes/11.png)
+#docs/images/wireframes/12.png)
+docs/images/wireframes/14.png)
+docs/images/wireframes/15.png)
+docs/images/wireframes/16.png)
+docs/images/wireframes/17.png)
+docs/images/wireframes/18.png)
+
