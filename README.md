@@ -108,11 +108,18 @@ The wireframes were created using [Balsamiq](https://balsamiq.com/). Here are so
 
 <h2>Features</h2>
 
-(docs/images/wireframes/11.png)
-#docs/images/wireframes/12.png)
-docs/images/wireframes/14.png)
-docs/images/wireframes/15.png)
-docs/images/wireframes/16.png)
-docs/images/wireframes/17.png)
-docs/images/wireframes/18.png)
+![1](docs/images/wireframes/11.png)
+
+![2](docs/images/wireframes/12.png)
+
+![3](docs/images/wireframes/14.png)
+
+![4](docs/images/wireframes/15.png)
+
+
+![5](docs/images/wireframes/16.png)
+
+![6](docs/images/wireframes/17.png)
+
+![7]docs/images/wireframes/18.png)
 
