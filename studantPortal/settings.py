@@ -43,7 +43,7 @@ ALLOWED_HOSTS = [
      '.gitpod.io'
 ]
 
-CSRF_TRUSTED_ORIGINS=['https://*.herokuapp.com','https://*.gitpod.io']
+CSRF_TRUSTED_ORIGINS=['https://*.herokuapp.com','https://*.gitpod.io', 'https://8000-archu0819-studantportal-x44sqiy7erk.ws-us110.gitpod.io']
 
 # Application definition
 
