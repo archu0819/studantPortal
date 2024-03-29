@@ -113,8 +113,13 @@ WSGI_APPLICATION = 'studantPortal.wsgi.application'
 #    }
 #}
 DATABASES = {
-'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.gitpod.io",
+    "https://*.herokuapp.com"
+]
 
 
 # Password validation
@@ -166,14 +171,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
  #   os.path.join(BASE_DIR, 'static')
 #]
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ] 
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR/'static']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#STATIC_ROOT=os.path.join(BASE_DIR, 'static')
-#CRISPY_TEMPLATE_PACK = 'bootstrap4'
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
-CRISPY_TEMPLATE_PACK = "bootstrap4"
+LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'login'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
