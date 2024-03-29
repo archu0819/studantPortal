@@ -36,11 +36,7 @@ SECRET_KEY = 'f)1&b-&wh-*k9k6m=g#dnzvmypmylwo5h1)owc$@1aq^nby%62'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '.herokuapp.com'
-    '127.0.0.1',
-    'localhost',
-     '8000-archu0819-studantportal-x44sqiy7erk.ws-us110.gitpod.io',
-     '.gitpod.io'
+    '*'
 ]
 
 CSRF_TRUSTED_ORIGINS=['https://*.herokuapp.com','https://*.gitpod.io', 'https://8000-archu0819-studantportal-x44sqiy7erk.ws-us110.gitpod.io']
