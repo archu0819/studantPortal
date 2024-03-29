@@ -1,3 +1,3 @@
-web: gunicorn studantPortal.wsgi:application
+web: gunicorn studantPortal.wsgi
 
 
