@@ -126,3 +126,17 @@ The wireframes were created using [Balsamiq](https://balsamiq.com/). Here are so
 
 ![7](docs/images/wireframes/18.png)
 
+
+## Tools and Technologies Used:
+
+The technologies implemented in this application included HTML5, CSS, Bootstrap, Python and Django.
+
+- Python used as the back-end programming language.
+* Git used for version control. (git add, git commit, git push)
++ GitHub used for secure online code storage.
+- GitHub Pages used for hosting the deployed front-end site.
+* Gitpod used as a cloud-based IDE for development.
++ Bootstrap used as the front-end CSS framework for modern responsiveness and pre-built components.
+- ElephantSQL used as the Postgres database.
+* Heroku used for hosting the deployed back-end site.
+
