@@ -30,8 +30,7 @@ TEMPLATES_DIR= BASE_DIR / 'templates'
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = os.environ.get('SECRET_KEY')
-SECRET_KEY = '(!$x4)xyxl&7c%u1eew(fkb9+__fgb2xh#+d_r4o@yyqo)p5q5'
+SECRET_KEY = 'f)1&b-&wh-*k9k6m=g#dnzvmypmylwo5h1)owc$@1aq^nby%62'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -172,12 +171,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
  #   os.path.join(BASE_DIR, 'static')
 #]
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR/'static']
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ] 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+#STATIC_ROOT=os.path.join(BASE_DIR, 'static')
+#CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
