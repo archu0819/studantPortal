@@ -109,7 +109,7 @@ WSGI_APPLICATION = 'studantPortal.wsgi.application'
    # }
 #}
 DATABASES = {
-   'default': dj_database_url.parse(os.environ.get("postgres://oijdlibw:oYBD5WIpgxOF7P53bBjs1ZQW69a-O1F3@tyke.db.elephantsql.com/oijdlibw"))
+   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 CSRF_TRUSTED_ORIGINS = [
