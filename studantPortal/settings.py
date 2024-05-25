@@ -33,7 +33,7 @@ TEMPLATES_DIR= BASE_DIR / 'templates'
 SECRET_KEY = 'f)1&b-&wh-*k9k6m=g#dnzvmypmylwo5h1)owc$@1aq^nby%62'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = false
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '*'
@@ -109,7 +109,7 @@ WSGI_APPLICATION = 'studantPortal.wsgi.application'
    # }
 #}
 DATABASES = {
-   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+   'default': dj_database_url.parse(os.environ.get("postgres://oijdlibw:oYBD5WIpgxOF7P53bBjs1ZQW69a-O1F3@tyke.db.elephantsql.com/oijdlibw"))
 }
 
 CSRF_TRUSTED_ORIGINS = [
