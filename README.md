@@ -59,8 +59,8 @@
    
 <h2>Admin Login Credentials for database :</h2>
 <ul>
-  <li>Username : root</li>
-  <li>Password : 1234</li>
+  <li>Username : admin</li>
+  <li>Password : admin123</li>
  In your web browser enter the address : http://127.0.0.1:8000/admin to view the database structure 
 </ul>
 
